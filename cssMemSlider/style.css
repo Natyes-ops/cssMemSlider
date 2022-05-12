@@ -76,6 +76,7 @@
     display: flex;
 }
 .slider-bottom {
+    padding-top: 10px;
     align-items: center;
     justify-content: space-between;
 }
@@ -107,4 +108,20 @@
 
 .slider-btn:not(:last-child) {
     margin-right: 1em;
+}
+@media screen and (max-width: 992px) {
+    .slider {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .slider-bottom {
+        flex-direction: column-reverse;
+    }
+    .slider-box__item-descr {
+        margin-top: 10px;
+        align-self: flex-start;
+        font-size: 1.2em;
+        font-weight: 400;
+    }
 }
