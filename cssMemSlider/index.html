@@ -9,8 +9,12 @@
 </head>
 <body>
     <div class="slider">
+        <input type="radio" name="slide" id="slide1" checked>
+        <input type="radio" name="slide" id="slide2">
+        <input type="radio" name="slide" id="slide3">
+        <input type="radio" name="slide" id="slide4">
         <div class="slider-box">
-            <div class="slider-box__item active" data-mem="People change">
+            <div class="slider-box__item slide-active" data-mem="People change">
                 <img src="./img/people_change.jpg" alt="people_change" class="slider-box__item-img" >
             </div>
             <div class="slider-box__item" data-mem="Mem">
@@ -24,15 +28,27 @@
             </div>
         </div>
         <div class="slider-bottom">
-            <div class="slider-box__item-descr"></div>
-            <div class="slider-btns">
-                <div class="slider-btn active"></div>
-                <div class="slider-btn"></div>
-                <div class="slider-btn"></div>
-                <div class="slider-btn"></div>
+            <div class="slider-bottom__mem">
+                <label class="slider-box__item-descr" for="slide1">
+                    People change
+                </label>
+                <label class="slider-box__item-descr" for="slide2">
+                    Mem
+                </label>
+                <label class="slider-box__item-descr" for="slide3">
+                    Wrote a function without bugs
+                </label>
+                <label class="slider-box__item-descr" for="slide4">
+                    First date(she and him)
+                </label>
+            </div>
+            <div class="slider-bottom_nav">
+                <label class="slider-btn" for="slide1"></label>
+                <label class="slider-btn" for="slide2"></label>
+                <label class="slider-btn" for="slide3"></label>
+                <label class="slider-btn" for="slide4"></label>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
