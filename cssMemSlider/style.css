@@ -62,11 +62,11 @@ input[type="radio"] {
     justify-content: space-between;
 }
 .slider-btn {
-    width: 20px;
-    height: 12px;
-    border: 10px solid #a6daff;
+    width: 1.5em;
+    height: .6em;
+    border: 1em solid #a6daff;
     background: #FFFF8C;
-    border-radius: 50px;
+    border-radius: 2em;
     cursor: pointer;
     transition: background .3s;
 }
@@ -103,12 +103,6 @@ input[type="radio"] {
 #slide4:checked ~ .slider-bottom > .slider-bottom__mem > label[for="slide4"] {
     display: block;
     animation: active .6s;
-}
-#slide1:not(:checked) ~ .slider-bottom > .slider-bottom_nav > label[for="slide1"],
-#slide2:not(:checked) ~ .slider-bottom > .slider-bottom_nav > label[for="slide2"],
-#slide3:not(:checked) ~ .slider-bottom > .slider-bottom_nav > label[for="slide3"],
-#slide4:not(:checked) ~ .slider-bottom > .slider-bottom_nav > label[for="slide4"] {
-    
 }
 #slide1:checked ~ .slider-bottom > .slider-bottom_nav > label[for="slide1"],
 #slide2:checked ~ .slider-bottom > .slider-bottom_nav > label[for="slide2"],
