@@ -1,12 +1,12 @@
 .slider {
     max-width: 770px;
     width: 100%;
-    padding: 0.7em;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: #a6daff;
+    border: 0.7em solid #a6daff;
     border-radius: 5px;
     overflow: hidden;
     box-sizing: border-box;
@@ -14,14 +14,62 @@
 
 .slider-box {
     display: flex;
-    width: 100%;
+    width: 400%;
 
 }
-
-.slider-box__item {
+input[type="radio"] {
+    visibility: hidden;
     position: absolute;
 }
+.slider-box__item {
+    width: 25%;
+    transition: all .6s ;
+}
+#slide1:checked ~ .slider-box .slide-active {
+    margin-left: 0;
+}
+#slide2:checked ~ .slider-box .slide-active {
+    margin-left: -25%;
 
+}
+#slide3:checked ~ .slider-box .slide-active {
+    margin-left: -50%;
+}
+#slide4:checked ~ .slider-box .slide-active {
+    margin-left: -75%;
+}
+.slider-box__item-img {
+    width: 100%;
+    max-height: 513px;
+    border-radius: 5px;
+}
+
+.slider-box__item-descr {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1.4em;
+    font-weight: 700;
+    line-height: 44px;
+    color: #FFF;
+    transition: visibility .3s;
+}
+
+.slider-bottom_nav,.slider-bottom {
+    display: flex;
+}
+.slider-bottom {
+    padding-top: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+.slider-btn {
+    width: 20px;
+    height: 12px;
+    border: 10px solid #a6daff;
+    background: #FFFF8C;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background .3s;
+}
 @keyframes hide {
     0% {
         opacity: 1;
@@ -42,70 +90,42 @@
 
     }
 }
-
-.slider-box__item.hide,
-.slider-box__item-descr.hide {
-    animation: hide .6s forwards;
-    visibility: hidden;
+#slide1:not(:checked) ~ .slider-bottom > .slider-bottom__mem > label[for="slide1"],
+#slide2:not(:checked) ~ .slider-bottom > .slider-bottom__mem > label[for="slide2"],
+#slide3:not(:checked) ~ .slider-bottom > .slider-bottom__mem > label[for="slide3"],
+#slide4:not(:checked) ~ .slider-bottom > .slider-bottom__mem > label[for="slide4"] {
+    display: none;
+    animation: hide .6s;
 }
-
-.slider-box__item.active,
-.slider-box__item-descr.active {
-    visibility: visible;
-    position: relative;
-    animation: active .6s forwards;
+#slide1:checked ~ .slider-bottom > .slider-bottom__mem > label[for="slide1"],
+#slide2:checked ~ .slider-bottom > .slider-bottom__mem > label[for="slide2"],
+#slide3:checked ~ .slider-bottom > .slider-bottom__mem > label[for="slide3"],
+#slide4:checked ~ .slider-bottom > .slider-bottom__mem > label[for="slide4"] {
+    display: block;
+    animation: active .6s;
 }
-
-.slider-box__item-img {
-    width: 100%;
-    max-height: 513px;
-    border-radius: 5px;
+#slide1:not(:checked) ~ .slider-bottom > .slider-bottom_nav > label[for="slide1"],
+#slide2:not(:checked) ~ .slider-bottom > .slider-bottom_nav > label[for="slide2"],
+#slide3:not(:checked) ~ .slider-bottom > .slider-bottom_nav > label[for="slide3"],
+#slide4:not(:checked) ~ .slider-bottom > .slider-bottom_nav > label[for="slide4"] {
+    
 }
-
-.slider-box__item-descr {
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 1.4em;
-    font-weight: 700;
-    line-height: 44px;
-    color: #FFF;
-    visibility: hidden;
-    opacity: 0;
+#slide1:checked ~ .slider-bottom > .slider-bottom_nav > label[for="slide1"],
+#slide2:checked ~ .slider-bottom > .slider-bottom_nav > label[for="slide2"],
+#slide3:checked ~ .slider-bottom > .slider-bottom_nav > label[for="slide3"],
+#slide4:checked ~ .slider-bottom > .slider-bottom_nav > label[for="slide4"] {
+    background: rgb(218, 68, 68);
 }
-
-.slider-btns,.slider-bottom {
-    display: flex;
-}
-.slider-bottom {
-    padding-top: 10px;
-    align-items: center;
-    justify-content: space-between;
-}
-.slider-btn {
-    position: relative;
-    width: 20px;
-    height: 12px;
-    background: #FFFF8C;
-    border-radius: 10px;
-    transition: background .3s;
+#slide1:checked ~ .slider-bottom > .slider-bottom_nav > label[for="slide1"]:hover,
+#slide2:checked ~ .slider-bottom > .slider-bottom_nav > label[for="slide2"]:hover,
+#slide3:checked ~ .slider-bottom > .slider-bottom_nav > label[for="slide3"]:hover,
+#slide4:checked ~ .slider-bottom > .slider-bottom_nav > label[for="slide4"]:hover {
+    background: #ffffff;
 }
 
 .slider-btn:hover {
-    background: #FFFFD9;
+    background: #ffffff;
 }
-
-.slider-btn.active::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-    width: 16px;
-    height: 8px;
-    background: #FFC0BF;
-    border-radius: 10px;
-}
-
 .slider-btn:not(:last-child) {
     margin-right: 1em;
 }
