@@ -15,8 +15,7 @@
 
 }
 input[type="radio"] {
-    visibility: hidden;
-    position: absolute;
+    display: none;
 }
 .slider-box__item {
     width: 25%;
