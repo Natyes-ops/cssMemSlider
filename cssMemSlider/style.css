@@ -1,10 +1,7 @@
 .slider {
     max-width: 770px;
     width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 5% auto 0;
     background: #a6daff;
     border: 0.7em solid #a6daff;
     border-radius: 5px;
